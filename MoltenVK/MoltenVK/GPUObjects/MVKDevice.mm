@@ -2017,6 +2017,12 @@ void MVKPhysicalDevice::initFeatures() {
 
 #if MVK_IOS
     _features.textureCompressionETC2 = true;
+    // zhuowei: copied from macOS. Let's see which one of these works...!
+    _features.occlusionQueryPrecise = true;
+    _features.imageCubeArray = true;
+    _features.depthClamp = true;
+    _features.vertexPipelineStoresAndAtomics = true;
+    _features.fragmentStoresAndAtomics = true;
 #if MVK_XCODE_12
 	_features.shaderInt64 = mslVersionIsAtLeast(MTLLanguageVersion2_3) && supportsMTLGPUFamily(Apple3);
 #else
