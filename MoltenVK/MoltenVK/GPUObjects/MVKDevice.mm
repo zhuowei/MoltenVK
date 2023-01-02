@@ -1934,6 +1934,10 @@ void MVKPhysicalDevice::initMetalFeatures() {
 												   (mvkOSVersionIsAtLeast(10.16) ||
 													_properties.vendorID == kIntelVendorId));
 #endif
+
+	// zhuowei: yolo
+	_metalFeatures.descriptorSetArgumentBuffers = _metalFeatures.argumentBuffers;
+
 	// Currently, if we don't support descriptor set argument buffers, we can't support argument buffers.
 	_metalFeatures.argumentBuffers = _metalFeatures.descriptorSetArgumentBuffers;
 
